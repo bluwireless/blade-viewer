@@ -1,0 +1,60 @@
+{{!
+Copyright (C) 2019 Blu Wireless Ltd.
+All Rights Reserved.
+
+This file is part of DesignFormat.
+
+DesignFormat is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+DesignFormat is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+DesignFormat. If not, see <https://www.gnu.org/licenses/>.
+}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {{#if title}}
+    <title>BLADE - {{title}}</title>
+    {{else}}
+    <title>BLADE</title>
+    {{/if}}
+
+    <!-- General Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {{> stylesheet url="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"}}
+    {{> stylesheet url="https://fonts.googleapis.com/css?family=Comfortaa"}}
+    {{> stylesheet url="/assets/css/spinkit.css"}}
+    {{> stylesheet url="/assets/css/dashboard.css"}}
+
+    <!-- Route Specific Stylesheets -->
+    {{{block "stylesheets"}}}
+
+    <!-- General Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
+    <!-- Route Specific Javascript -->
+    {{{block "scripts"}}}
+
+</head>
+<body>
+
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            {{{block "body"}}}
+        </div>
+    </div>
+
+</body>
+</html>

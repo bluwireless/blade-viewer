@@ -1,0 +1,423 @@
+/*
+Copyright (C) 2019 Blu Wireless Ltd.
+All Rights Reserved.
+
+This file is part of DesignFormat.
+
+DesignFormat is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+DesignFormat is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+DesignFormat. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+html, body {
+    background-color:#fafafa;
+    height:100%;
+    font-family:'Comfortaa', sans-serif;
+}
+
+h1 {
+    font-size:34px;
+    font-weight:300;
+}
+
+hr {
+    margin:0;
+}
+
+hr.clearbar {
+    border:none !important;
+    clear:both;
+    margin:5px 0 10px 0;
+}
+
+::placeholder {
+    color:#000 !important;
+    opacity:0.2 !important;
+}
+
+.pull-right {
+    float:right !important;
+}
+
+.hidden {
+    display:none;
+}
+
+.welcome {
+    width:500px;
+    height:400px;
+    position:relative;
+    top:50%;
+    bottom:50%;
+    left:50%;
+    right:50%;
+    margin-left:-250px;
+    margin-top:-200px;
+    border:0px solid #000;
+}
+
+.welcome .logo {
+    width:192px;
+    height:50px;
+    background-image:url(../img/logo.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.welcome h1, .welcome h2, .welcome h3, .welcome h4, .welcome h5, .welcome h6 {
+    text-align:center;
+    color:#666;
+}
+
+.welcome .panel {
+    width:auto;
+    height:auto;
+    top:60px;
+    left:0;
+    right:0;
+    position:absolute;
+    background-color:#FFF;
+    border:1px solid #DDD;
+    padding:10px;
+    box-sizing:border-box;
+    border-radius:3px;
+}
+
+.welcome .panel .btn {
+    margin-top:10px;
+}
+
+.welcome .panel .sk-wave {
+    margin:0 auto 10px auto !important;
+}
+
+.welcome .panel .progress {
+    margin-bottom:10px;
+}
+
+.welcome .stdbox {
+    width:100%;
+    border:1px solid #EEE;
+    padding:5px;
+    margin-bottom:10px;
+    box-sizing:border-box;
+    overflow-x:auto;
+    overflow-y:auto;
+    max-height:150px;
+    font-size:10px;
+    font-family:monospace;
+}
+
+.sidebar {
+    width:310px;
+    background-color:#EEE;
+    border-right:#DDD 1px solid;
+    color:#000;
+    position:fixed;
+    z-index:1000;
+    padding:0;
+}
+
+.sidebar .switcher {
+    width:100%;
+    padding:10px;
+    font-size:12px;
+    border-bottom:1px solid #DDD;
+}
+
+.sidebar.collapsed {
+    width:50px;
+}
+
+.sidebar h1 {
+    color:#000;
+}
+
+.sidebar hr {
+    border-color:#AAA;
+}
+
+.sidebar .control {
+    text-align:center;
+}
+
+.sidebar.collapsed .control {
+    display:none;
+}
+
+.sidebar .control .btn {
+    font-size:14px;
+}
+
+.sidebar .panels {
+    width:100%;
+    position:absolute;
+    top:60px;
+    bottom:50px;
+    right:0;
+    left:0;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+.sidebar.collapsed .panels {
+    display:none;
+}
+
+.sidebar .collapser {
+    position:absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    font-size:20px;
+    border-top:1px solid #DDD;
+    cursor:pointer;
+}
+
+.sidebar.collapsed .collapser {
+    display:none;
+}
+
+.sidebar .expander {
+    display:none;
+}
+
+.sidebar.collapsed .expander {
+    position:absolute;
+    display:block;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    font-size:28px;
+    text-align:center;
+    color:#666;
+}
+
+.sidebar.collapsed .expander .fa-angle-double-right {
+    position:absolute;
+    display:block;
+    top:50%;
+    width:100%;
+    text-align:center;
+    margin-top:-14px;
+    cursor:pointer;
+}
+
+.sidebar > .collapser:hover, .sidebar > .expander:hover {
+    background-color:#DDD;
+}
+
+.sidebar .panel {
+    width:100%;
+    position:relative;
+}
+
+.sidebar .panel .box {
+    width:100%;
+    height:auto;
+    background-color:#FFF;
+    box-shadow:0 0 2px 0 rgba(0,0,0,0.1);
+    box-sizing:border-box;
+    padding:10px;
+    margin-bottom:20px;
+    overflow-x:hidden;
+    position:relative;
+}
+
+.sidebar .panel .box .content {
+    overflow-x:auto;
+}
+
+.sidebar .panel .box.closed {
+    height:50px;
+    overflow-y:hidden;
+}
+
+.sidebar .panel .box.closed .content {
+    display:none;
+}
+
+.sidebar .panel .box h1,h2,h3,h4,h5,h6 {
+    padding:0;
+    margin:0 0 5px 0;
+}
+
+.sidebar .panel .box h4 {
+    font-size:22px;
+    padding-top:3px;
+}
+
+.sidebar .panel .box .expander {
+    position:absolute;
+    top:13px;
+    right:10px;
+    display:block;
+    width:25px;
+    height:25px;
+    line-height:25px;
+    cursor:pointer;
+}
+
+.sidebar .panel .box .expander:hover {
+    color:#49B;
+}
+
+.box .content td {
+    padding:5px;
+    font-size:14px;
+    line-height:30px;
+}
+
+.sidebar #treeview {
+    overflow-x:auto;
+}
+
+.sidebar #treeview .jstree-container-ul > .jstree-open  > .jstree-ocl {
+    background-position:-36px -4px;
+}
+.sidebar #treeview .jstree-container-ul > .jstree-closed > .jstree-ocl {
+    background-position:-4px -4px;
+}
+.sidebar #treeview .jstree-container-ul > .jstree-leaf > .jstree-ocl {
+    background:transparent;
+}
+
+.dashboard {
+    position:absolute;
+    top:0;
+    left:0px;
+    botton:0;
+    right:0;
+    padding:0 0 0 0!important;
+    height:100%;
+    cursor:default !important;
+    overflow:hidden;
+}
+
+/* .dashboard.expanded {
+    left:50px;
+} */
+
+.dashboard .bar {
+    position:absolute;
+    height:58px;
+    margin-bottom:0;
+    border:1px solid #CCC;
+    border-radius:5px;
+    left:320px;
+    right:10px;
+    top:10px;
+    background-color:#FFF;
+    opacity:0.5;
+    transition:opacity 0.3s;
+    -webkit-transition:opacity 0.3s;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+.dashboard .bar:hover {
+    opacity:1.0;
+}
+
+.dashboard .logo {
+    width:192px;
+    height:40px;
+    background-image:url(../img/logo.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:right;
+    float:right;
+    margin-top:-1px;
+}
+
+.dashboard.expanded h1 {
+    margin-left:50px;
+}
+
+.dashboard .activity {
+    position:absolute;
+    z-index:1000;
+    top:50%;
+    left:50%;
+    margin-top:-75px;
+    margin-left:55px;
+    width:200px;
+    height:150px;
+}
+
+.dashboard .activity .sk-wave {
+    margin:0 auto 10px auto !important;
+}
+
+.diagrammenu {
+    position:absolute;
+    display:none;
+    z-index:50000;
+    top:5px;
+    left:5px;
+    border:1px solid #DDD;
+    background-color:#FFF;
+    min-width:150px;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+.diagrammenu ul {
+    list-style-type:none;
+    width:100%;
+    padding:0;
+    border:0;
+    margin:0;
+}
+.diagrammenu ul li:first-of-type {
+    font-weight:bold;
+}
+.diagrammenu ul li {
+    border-bottom:1px solid #DDD;
+    padding:3px 5px 3px 5px;
+    cursor:pointer;
+}
+.diagrammenu ul li:hover {
+    background-color:#17a2b8;
+    color:#FFF;
+}
+.diagrammenu ul li:last-of-type {
+    border-bottom:none;
+}
+
+.toggle-table {
+    table-layout:fixed;
+}
+
+.toggle-table tr td:last-of-type {
+    width:70px;
+}
+
+.attribute-table thead th {
+    padding:5px 5px 5px 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

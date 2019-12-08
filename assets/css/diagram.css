@@ -1,0 +1,83 @@
+/*
+Copyright (C) 2019 Blu Wireless Ltd.
+All Rights Reserved.
+
+This file is part of DesignFormat.
+
+DesignFormat is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+DesignFormat is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+DesignFormat. If not, see <https://www.gnu.org/licenses/>.
+*/
+
+.diagrammenu {
+    position:absolute;
+    display:none;
+    z-index:50000;
+    top:5px;
+    left:5px;
+    border:1px solid #DDD;
+    background-color:#FFF;
+    min-width:150px;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+.diagrammenu ul {
+    list-style-type:none;
+    width:100%;
+    padding:0;
+    border:0;
+    margin:0;
+}
+.diagrammenu ul li {
+    border-bottom:1px solid #DDD;
+    padding:3px 5px 3px 5px;
+    cursor:pointer;
+}
+.diagrammenu ul li:hover {
+    background-color:#EEE;
+}
+.diagrammenu ul li:last-of-type {
+    border-bottom:none;
+}
+
+.pathbar {
+    width:100%;
+    height:48px;
+    z-index:50000;
+    top:0;
+    left:0;
+    border-bottom:1px solid #DDD;
+    background-color:#EEE;
+    padding-left:10px;
+}
+
+.pathbar ol {
+    list-style-type:none;
+    display:block;
+    height:48px;
+    padding:0;
+    margin:0;
+    font-size:0px;
+}
+
+.pathbar ol li {
+    display:inline-block;
+    height:48px;
+    line-height:48px;
+    padding:0 10px 0 10px;
+    margin:0;
+    border-right:1px solid #DDD;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.pathbar ol li:last-of-type {
+    border-right:none;
+}

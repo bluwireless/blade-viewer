@@ -1,0 +1,98 @@
+{{!
+Copyright (C) 2019 Blu Wireless Ltd.
+All Rights Reserved.
+
+This file is part of DesignFormat.
+
+DesignFormat is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+DesignFormat is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+DesignFormat. If not, see <https://www.gnu.org/licenses/>.
+}}
+
+{{#contentFor "stylesheets"}}
+{{>stylesheet url="/assets/css/bootstrap-toggle.css"}}
+{{>stylesheet url="https://unpkg.com/huebee@1/dist/huebee.min.css"}}
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+{{>script url="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"}}
+{{>script url="/assets/js/bootstrap-toggle.js"}}
+{{>script url="/assets/js/fabric.min.js"}}
+{{>script url="/assets/js/randomColor.js"}}
+{{>script url="/assets/js/pathfinding-browser.js"}}
+{{>script url="https://unpkg.com/huebee@1/dist/huebee.pkgd.min.js"}}
+{{>script url="/assets/js/jszip.min.js"}}
+
+{{>script url="/assets/js/designformat/designformat.js"}}
+{{>script url="/assets/js/diagram.js"}}
+{{>script url="/assets/js/diagram.canvas.js"}}
+{{>script url="/assets/js/diagram.label.js"}}
+{{>script url="/assets/js/diagram.block.js"}}
+{{>script url="/assets/js/diagram.port.js"}}
+{{>script url="/assets/js/diagram.connection.js"}}
+{{>script url="/assets/js/diagram.menu.js"}}
+{{>script url="/assets/js/diagram.inspector.js"}}
+{{>script url="/assets/js/ui.js"}}
+{{/contentFor}}
+
+{{#contentFor "body"}}
+<div class="sidebar h-100">
+    <div class="switcher">
+        <div class="control noselect" id="panel-tabs">
+            <div class="btn-group" role="group" aria-label="Tool Selector">
+                <a id="tab-treeview" onclick="javascript:UI.switchControlTab('treeview');" class="btn btn-outline-info active"><i class="fa fa-code-branch"></i> Tree</a>
+                <a id="tab-options" onclick="javascript:UI.switchControlTab('options');" class="btn btn-outline-info"><i class="fa fa-cog"></i> Options</a>
+                <a id="tab-inspector" onclick="javascript:UI.switchControlTab('inspector');" class="btn btn-outline-info"><i class="fa fa-search"></i> Inspector</a>
+            </div>
+        </div>
+    </div>
+    <div class="panels" id="panel-holder">
+        <div class="panel noselect" id="panel-treeview">
+            <div id="treeview"></div>
+        </div>
+        <div class="panel noselect" id="panel-options" style="display:none;"></div>
+        <div class="panel" id="panel-inspector" style="display:none;">
+            <div class="box">
+                Right click any item in the design and choose 'Inspect' to see
+                more details about it.
+            </div>
+        </div>
+    </div>
+    <div onclick="javascript:UI.showSidebar(false);" class="collapser noselect">
+        <i class="fa fa-angle-double-left"></i> Collapse Sidebar
+    </div>
+    <div onclick="javascript:UI.showSidebar(true);" class="expander noselect">
+        <i class="fa fa-angle-double-right"></i>
+    </div>
+</div>
+<div class="dashboard noselect">
+    <div class="bar">
+        <div class="btn-group zoom" role="group">
+            <button type="button" class="btn btn-outline-secondary" onclick="javascript:UI.zoomOut();"><i class="fas fa-search-minus"></i></button>
+            <button type="button" class="btn btn-outline-secondary" onclick="javascript:UI.zoomReset();"><i class="fas fa-compress"></i></button>
+            <button type="button" class="btn btn-outline-secondary" onclick="javascript:UI.zoomIn();"><i class="fas fa-search-plus"></i></button>
+        </div>
+        <button type="button" class="btn btn-outline-secondary" onclick="javascript:UI.clearConnections();">Clear Connections</button>
+        <div class="logo"></div>
+    </div>
+    <canvas id="maincanvas"></canvas>
+    <div id="draw_activity" class="activity">
+        <div style="text-align:center;margin-bottom:10px;">Working, please wait...</div>
+        <div class="sk-wave">
+            <div class="sk-rect sk-rect1"></div>
+            <div class="sk-rect sk-rect2"></div>
+            <div class="sk-rect sk-rect3"></div>
+            <div class="sk-rect sk-rect4"></div>
+            <div class="sk-rect sk-rect5"></div>
+        </div>
+    </div>
+</div>
+{{/contentFor}}

@@ -1,0 +1,45 @@
+{{!
+Copyright (C) 2019 Blu Wireless Ltd.
+All Rights Reserved.
+
+This file is part of DesignFormat.
+
+DesignFormat is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+DesignFormat is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+DesignFormat. If not, see <https://www.gnu.org/licenses/>.
+}}
+
+{{#contentFor "scripts"}}
+{{> script url="/assets/js/api.js"}}
+<script type="text/javascript">
+var openDesignBlob = function() {
+    var blob_path = document.getElementById('blobpath').value.trim();
+    if (blob_path.length == 0) return;
+    else window.location.href = '/view/path/' + blob_path;
+};
+</script>
+{{/contentFor}}
+
+{{#contentFor "body"}}
+<div class="welcome">
+    <div class="logo"></div>
+
+    <div id="panel_designpath" class="panel">
+        <div id="alert_error" class="alert alert-danger" style="display:none;">Error Occurred</div>
+        <label for="blobpath">View a DesignFormat blob:</label>
+        <input id="blobpath" name="blobpath" type="text" class="form-control" placeholder="/home/user/..." />
+        <a href="#" class="searchbtn btn btn-primary pull-right" onclick="javascript:openDesignBlob();">
+            <i class="fa fa-eye"></i> Open Blob From Path
+        </a>
+    </div>
+
+</div>
+{{/contentFor}}

@@ -1,0 +1,46 @@
+{{!
+Copyright (C) 2019 Blu Wireless Ltd.
+All Rights Reserved.
+
+This file is part of DesignFormat.
+
+DesignFormat is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+DesignFormat is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+DesignFormat. If not, see <https://www.gnu.org/licenses/>.
+}}
+
+{{#contentFor "scripts"}}
+<script type="text/javascript">
+var openDesign = function() {
+    var design = document.getElementById('design').selectedOptions[0].value;
+    window.location.href = window.location.href + '/' + design;
+};
+</script>
+{{/contentFor}}
+
+{{#contentFor "body"}}
+<div class="welcome">
+    <div class="logo"></div>
+
+    <div id="panel_designpath" class="panel">
+        <label for="design">Select a design to view:</label>
+        <select id="design" name="design" class="form-control">
+        {{#each designs}}
+        <option value="{{this}}">{{this}}</option>
+        {{/each}}
+        </select>
+        <a href="#" class="searchbtn btn btn-primary pull-right" onclick="javascript:openDesign();">
+            <i class="fa fa-eye"></i> Open Design
+        </a>
+    </div>
+
+</div>
+{{/contentFor}}

@@ -1,0 +1,3 @@
+[submodule "designformat"]
+	path = designformat
+	url = git@github.com:/blu-peter/designformat
